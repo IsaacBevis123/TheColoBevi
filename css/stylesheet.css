@@ -65,3 +65,8 @@ footer  {
 
 
 }
+.btn.btn-lg {
+	border-radius: 2em;
+	background-color: #00FF64;
+	
+}
