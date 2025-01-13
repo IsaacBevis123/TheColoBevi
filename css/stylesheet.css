@@ -59,6 +59,9 @@ footer  {
 .row-marg {
 	margin-top: 0.4rem;
 }
+.paragraph-head {
+	margin-bottom: 0em;
+}
 #home {
     background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,1.00) 37.83%,rgba(4,2,15,1.00) 49.22%,rgba(72,0,74,1.00) 100%);
     background-image: -moz-linear-gradient(270deg,rgba(0,0,0,1.00) 37.83%,rgba(4,2,15,1.00) 49.22%,rgba(72,0,74,1.00) 100%);
