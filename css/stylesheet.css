@@ -29,6 +29,20 @@ footer  {
     background-image: url("../images/footer_test3.JPG");
 	margin-right: 0rem;
 }
+.top-banner {
+	background-color: firebrick;
+	height: 2em;
+	margin-right: -0.9em;
+	margin-left: -0.9em;
+}
+.top-banner p {
+	color: aliceblue;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+ 	text-align: center;
+	
+}
 .footer {
     background-image: url("../images/footer_test3.JPG");
 	margin-top: 1rem;
@@ -90,3 +104,5 @@ footer  {
 	background-color: #00FF64;
 	
 }
+
+
