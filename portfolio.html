@@ -141,26 +141,42 @@
 		   <h2>The Colorado Bevi Website</h2>
 		   <div class="row">
 		     <div class="col-xl-7"><img src="images/Tech/Code.png" alt="" width="1520" height="575" class="img-fluid"/></div>
-		     <div class="col-xl-5" style="margin-top: 2rem;"><p>This website was programmed, aside from the Bootstrap JavaScript blugin, from scratch using HTML, CSS, and JavaScript by me. The source code for this website is also viewable on my GitHub accout, along with several other projects. I wanted to make this website from scratch instead of using a website builder because I wanted a more challenging project for myself.</p></div>
+		     <div class="col-xl-5" style="margin-top: 2rem;"><p>This website was programmed from scratch, aside from the Bootstrap JavaScript plugin, using HTML, CSS, and JavaScript by me. The source code for this website is also viewable on my GitHub accout, along with several other projects. I wanted to make this website from scratch instead of using a website builder because I wanted a more challenging project for myself.</p></div>
 	       </div>
 			<h2>College Scenior Project</h2>
 	       <h5 class="paragraph-head">Remote Unlocking System for Older Vehicles</h5>
-	         <p></p>
-	       <p>Duis at laoreet odio. Praesent consequat vitae mauris et convallis. Sed imperdiet eros id urna imperdiet lacinia. Aenean accumsan tortor in lectus interdum fermentum eu ac nibh. Integer ac finibus nibh. Phasellus id nisi vitae orci bibendum sodales et eget mauris. In mattis nisi risus, id luctus metus bibendum et. Etiam porttitor massa mattis, dictum nunc at, vulputate est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin fermentum mollis elit, non commodo nisl faucibus at. In et tortor ligula. Phasellus maximus purus sed ante tempus sollicitudin. Donec et leo vel lacus ullamcorper aliquam. In mauris nisl, ultricies nec tellus sed, iaculis ultrices dui. Ut porttitor neque tempus est varius egestas. Fusce lobortis laoreet dui, id suscipit sapien. </p>
+	         <p>The original idea for this project was to add remote locking and unlocking to my 1986 Toyota 4Runner. The premise was rather simple, just have two micro-controllers communicate wirelessly where the vehicle reciever operates relay boards for high-tourqe servos that are connected to the locking rod inside the doorpannel. I set out with three main goals for the first prototype:</p>
+			 <ol>
+			 	<li>The main control unit should be able to detect the keys presence and automatically unlock the car when you are close.</li>
+				<li>Be able to automatically lock the vehicle when the key is no longer detected (in case the user forgot to lock the doors)</li>
+				<li>Lastly, The device should be able to function as a normal key fob (i.e. unlock/lock car with the press of a button).</li>
+			 </ol>
+	       <p>Unfortunatly, due to time constrants, only the final goal was succsessfully implemented. However, I did learn quite a bit with this project since it was my first major project where I served as all team members simultaniously. </p>
+			 
 	       <div class="row">
-	         <div class="col-xl-4"><img src="images/Tech/SceniorProject1.jpg" alt="" width="1431" height="1073" class="img-fluid"/></div>
-	         <div class="col-xl-4"><b>Describe these weird things (left reciever, right sender)</b>
-	           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultrices cursus risus, vel porttitor nibh rhoncus at. Cras suscipit porta laoreet. Integer congue at risus id bibendum. Morbi turpis velit, faucibus vitae ultrices ut, cursus non lectus. Donec quis ipsum nulla. Nullam consectetur porta turpis, id iaculis nibh commodo nec. Fusce elit lacus, aliquam sed maximus nec, vulputate vel erat. Nam consequat ligula ipsum, et vestibulum velit viverra sit amet.</p>
+	         <div class="col-xl-4">
+				 <h6 style="text-align: center">Reciever Images</h6>
+				 <img src="images/Tech/SceniorProject1.jpg" alt="" width="1431" height="1073" class="img-fluid"/>
+				 <img src="images/Tech/SceniorProject4.png" alt="" width="1486" height="1615" class="img-fluid" style="margin-top: 5rem;"/>
+			   </div>
+	         <div class="col-xl-4">
+				<h5 class="paragraph-head">Software</h5>
+			 <p>In terms of software, rolling codes are typically used for authenticating a keyfob with a vehicle, I wrote my own simple algorithms for generating these security codes and authenticating them on the reciever. Without getting too deep into the detail, the rolling code algorithm at its core is just two pseudo-random number generators using the same "seed" so each one will always generate the same next number. The sender uses this to generate a 32Bit code, then appends the current system time (to prevent whats called a Rolljam attack), and then appends the commanding action code. The reciever then checks the security code to make sure it matches somewhere within the next dousen codes (to prevent the independant algorithms from "desyncing" when buttons are pressed out of range), then it checks the time code to make sure it is within a short window of time from pressent, and then if both things come out good it does the desired action.</p>
+				 <h5 class="paragraph-head">Hardware</h5>
+	           <p>For hardware I chose the ESP32 micro-controller. I chose this particular one because of it's support of the ESP-NOW wireless communication protocol. The wireing was pretty simple, just three buttons for the sender, and some three pin header connections for the servos on the reciever, as well as some debug LEDs.</p>
              </div>
-	         <div class="col-xl-4"><img src="images/Tech/SceniorProject2.jpg" alt="" width="624" height="539" class="img-fluid"/></div>
+	         <div class="col-xl-4">
+				 <h6 style="text-align: center">Sender Images</h6>
+				 <img src="images/Tech/SceniorProject2.jpg" alt="" width="624" height="539" class="img-fluid"/>
+				 <img src="images/Tech/SceniorProject3.png" alt="" width="1475" height="1956" class="img-fluid" style="margin-top: 0.5rem;"/>
+			   </div>
            </div>
-	       <div class="row">
-	         <div class="col-xl-4"><img src="images/Tech/SceniorProject4.png" alt="" width="1486" height="1615" class="img-fluid"/></div>
-	         <div class="col-xl-4"><b>Describe wireing diagrams (left reciever, right sender)</b>
-	           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultrices cursus risus, vel porttitor nibh rhoncus at. Cras suscipit porta laoreet. Integer congue at risus id bibendum. Morbi turpis velit, faucibus vitae ultrices ut, cursus non lectus. Donec quis ipsum nulla. Nullam consectetur porta turpis, id iaculis nibh commodo nec. Fusce elit lacus, aliquam sed maximus nec, vulputate vel erat. Nam consequat ligula ipsum, et vestibulum velit viverra sit amet.</p>
-             </div>
-	         <div class="col-xl-4"><img src="images/Tech/SceniorProject3.png" alt="" width="1475" height="1956" class="img-fluid"/></div>
-           </div>
+			 <h5 class="paragraph-head">Changes if I were to make a second prototype</h5>
+			 <p>If I were to make a second prototype or even a final version, I would:</p>
+			 <ol style="margin-top: -1rem;">
+			 	<li>switch to using the latest Raspberry Pi Pico or design my own single board computer using the RP2040 chip. This would be much more power efficient so I could run it off a coin cell battery.</li>
+				 <li>Use an external low power radio transmitter module instead of the built in WiFi chip.</li>
+			 </ol>
          </div>
      </div>
 	  <!-- Content Panel -->    </div>
