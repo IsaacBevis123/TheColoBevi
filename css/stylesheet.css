@@ -91,15 +91,15 @@ footer  {
 
 
 }
-
 #portfolio-nav .nav-item .active {
 
 
 }
-.btn.btn-lg {
+.row .col-xl-6 .btn.btn-lg {
 	border-radius: 2em;
-	background-color: #00FF64;
-	
+	background-color: #4b83ce;
+	border-color: #6dabf4;
+	border-width: 0.2em;
+	margin-top: 0.1em;
+	margin-left: 3em;
 }
-
-
