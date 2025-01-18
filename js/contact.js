@@ -1,7 +1,7 @@
 const button = document.getElementById("contactButton");
 
 button.addEventListener("click", function() {
-	window.open("mailto:thebevi@thecolobevi.com");
+	window.open("mailto:contact@thecolobevi.com");
 });
 
 button.addEventListener("mouseover", function() {
